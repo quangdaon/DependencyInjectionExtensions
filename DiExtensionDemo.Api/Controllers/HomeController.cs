@@ -3,20 +3,28 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiExtensionDemo.Api.Controllers;
 
+/// <summary>
+/// Controller for managing home endpoints.
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class HomeController : ControllerBase
 {
-
-    private readonly ILogger<HomeController> _logger;
     private readonly IHomeService _homeService;
 
-    public HomeController(ILogger<HomeController> logger, IHomeService homeService)
+    /// <summary>
+    /// Instantiate the home controller.
+    /// </summary>
+    /// <param name="homeService">Service to manage home content.</param>
+    public HomeController(IHomeService homeService)
     {
-        _logger = logger;
         _homeService = homeService;
     }
 
+    /// <summary>
+    /// Get home message.
+    /// </summary>
+    /// <returns>Home message.</returns>
     [HttpGet]
     public string Get() => _homeService.GetMessage();
 }

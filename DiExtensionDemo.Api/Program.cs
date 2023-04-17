@@ -39,7 +39,7 @@ public class Program
     /// <summary>
     /// Option #1 (Status Quo): API is responsible for managing its own services.
     /// </summary>
-    /// <param name="services"></param>
+    /// <param name="services">Dependency injection container.</param>
     private static void AddServicesWithinApiProject(IServiceCollection services)
     {
         services.AddTransient<IHomeService, HomeService>();
@@ -50,7 +50,8 @@ public class Program
     /// <summary>
     /// Option #2: Service package defines its own dependencies. 
     /// </summary>
-    /// <param name="services"></param>
+    /// <param name="services">Dependency injection container.</param>
+    /// <seealso cref="ServiceBuilderExtensions.AddDemo"/>
     private static void AddServicesUsingServiceExtension(IServiceCollection services)
     {
         services.AddDemo();
@@ -59,7 +60,9 @@ public class Program
     /// <summary>
     /// Option #3: Service package defines a dependency tree; API is responsible for adding individual "packages." 
     /// </summary>
-    /// <param name="services"></param>
+    /// <param name="services">Dependency injection container.</param>
+    /// <seealso cref="ServiceBuilderExtensions.AddHome"/>
+    /// <seealso cref="ServiceBuilderExtensions.AddUser"/>
     private static void AddServicesWithGranularDefinitions(IServiceCollection services)
     {
         services.AddHome();
