@@ -6,7 +6,7 @@ Note: This particular demo uses [Microsoft's default dependency injection provid
 
 Consumer is responsible for managing its own dependencies. Specific implementation can vary, but the gist is that every service binding used in the consuming layer has to be individually declared. This is the status quo.
 
-- Example: [Program.cs Line 43](DiExtensionDemo.Api\Program.cs#L43)
+- Example: [Program.cs Line 43](DiExtensionDemo.Api/Program.cs#L43)
 
 ### Pros
 
@@ -25,8 +25,8 @@ Consumer is responsible for managing its own dependencies. Specific implementati
 
 Service package registers its own services. A single helper/extension method is exposed to allow the consumer to register all of its available services.
 
-- Example of Implementation: [ServiceBuilderExtensions.cs Line 14](DiExtensionDemo.Services\Extensions\ServiceBuilderExtensions.cs#L14)
-- Example of Registration: [Program.cs Line 55](DiExtensionDemo.Api\Program.cs#L55)
+- Example of Implementation: [ServiceBuilderExtensions.cs Line 14](DiExtensionDemo.Services/Extensions/ServiceBuilderExtensions.cs#L14)
+- Example of Registration: [Program.cs Line 55](DiExtensionDemo.Api/Program.cs#L55)
 
 ### Pros
 
@@ -45,8 +45,8 @@ Service package registers its own services. A single helper/extension method is 
 
 Service package exposes methods of registering "batches" of services. Each batch contains one or more service(s) and defines its own dependency tree; consumer is responsible for adding individual batches.
 
-- Example of Implementation: [ServiceBuilderExtensions.cs Line 26](DiExtensionDemo.Services\Extensions\ServiceBuilderExtensions.cs#L26)
-- Example of Registration: [Program.cs Line 66](DiExtensionDemo.Api\Program.cs#L66)
+- Example of Implementation: [ServiceBuilderExtensions.cs Line 26](DiExtensionDemo.Services/Extensions/ServiceBuilderExtensions.cs#L26)
+- Example of Registration: [Program.cs Line 66](DiExtensionDemo.Api/Program.cs#L66)
 
 ### Pros
 
