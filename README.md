@@ -60,3 +60,8 @@ Service package exposes methods of registering "batches" of services. Each batch
 - Service layer is coupled to dependency injection provider.
 - See "Introduces risk of service package..." under Option #2 Cons.
 - Depending on the DI provider, potentially introduces risk of conflict when multiple services are registered by multiple batches.
+
+## Contributors
+
+- [Quangdao Nguyen](https://github.com/quangdaon)
+- [Matt Millican](https://github.com/mmillican)
